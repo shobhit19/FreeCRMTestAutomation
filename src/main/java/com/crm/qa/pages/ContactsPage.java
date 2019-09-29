@@ -19,6 +19,8 @@ public class ContactsPage extends TestBase {
 	WebElement labelContacts;
 	@FindBy(xpath="//input[@type='checkbox']")
 	WebElement chkContacts;
+	@FindBy(linkText="New")
+	WebElement btnNew;
 	
 	public boolean verifyContactsLabel() {
 		return labelContacts.isDisplayed();
@@ -27,4 +29,9 @@ public class ContactsPage extends TestBase {
 	public void selectCheckBox() {
 		chkContacts.click();
 	}
-}
+	
+	public void clickOnNewContact() throws InterruptedException {
+		btnNew.click();
+		}
+	}
+

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [FREE CRM Application Test Automation Test Suite]">
+  <listeners>
+    <listener class-name="com.qa.crm.extentreportlistener.ExtentReportListener"/>
+  </listeners>
   <test thread-count="5" name="Free CRM App Test Cases(failed)">
     <classes>
       <class name="com.crm.qa.testcases.ContactsPageTest">
         <methods>
-          <include name="verifyCheckBoxContactsPage"/>
           <include name="setup"/>
           <include name="verifyClickOnContactsLabel"/>
+          <include name="verifyClickOnNewContact"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.ContactsPageTest -->

@@ -18,7 +18,7 @@ public class HomePage extends TestBase {
 	
 	@FindBy(xpath="//span[contains(text(),'shobhit v')]")
 	WebElement userameLabel;
-	@FindBy(xpath="//span[contains(text(),'Contacts')]")
+	@FindBy(xpath="//a[@href='/contacts']")
 	WebElement lnkContacts;
 	@FindBy(xpath="//span[contains(text(),'Deals')]")
 	WebElement lnkDeals;
