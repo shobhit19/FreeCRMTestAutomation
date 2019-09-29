@@ -11,4 +11,5 @@ public class DealsPage extends TestBase{
 		// TODO Auto-generated constructor stub
 	}
 
+	
 }
