@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.pages.SignUpPage;
 import com.crm.qa.testbase.TestBase;
 
 
@@ -16,6 +17,7 @@ public class LoginPageTest extends TestBase{
 
 	LoginPage loginPage;
 	HomePage homePage;
+	SignUpPage signUpPage;
 	public LoginPageTest() throws IOException  {
 		super();
 	}
@@ -39,6 +41,10 @@ public class LoginPageTest extends TestBase{
 		
 	}
 	
+	@Test(priority =3)
+	public void verifySignUpClick() throws IOException {
+		signUpPage=loginPage.clickOnSignUp();
+	}
 	@AfterMethod
 	public void tearDown() {
 		driver.close();

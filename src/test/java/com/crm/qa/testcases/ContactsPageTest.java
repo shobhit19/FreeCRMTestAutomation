@@ -39,12 +39,7 @@ public class ContactsPageTest extends TestBase {
 	public void verifyClickOnContactsLabel() throws IOException {
 		contactsPage=homePage.clickOnContacts();
 	}
-//	
-//	@Test
-//	public void verifyCheckBoxContactsPage() {
-//		contactsPage.selectCheckBox();
-//	}
-//	
+
 	@Test(priority=2)
 	public void verifyClickOnNewContact() throws IOException, InterruptedException {
 		contactsPage=homePage.clickOnContacts();
@@ -64,8 +59,19 @@ public class ContactsPageTest extends TestBase {
 		contactsPage.clickOnNewContact();
 		//contactsPage.createNewContact();
 		contactsPage.createNewContact(firstName, lastName, Email);
-		//contactsPage.clickOnContactSave();
+		contactsPage.clickOnSave();
+	
 	}
+	
+//	@Test
+//	public void verifyClickOnContactsCancel() {
+//		contactsPage.clickOnCancel();
+//	}
+//	
+//	@Test
+//	public void verifyClickOnSave() {
+//		contactsPage.clickOnSave();
+//	}
 	
 	@AfterMethod
 	public void tearDown() {

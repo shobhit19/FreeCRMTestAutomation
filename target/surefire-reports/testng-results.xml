@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="20170" started-at="2019-09-29T12:13:52Z" finished-at="2019-09-29T12:14:12Z">
+  <suite name="Surefire suite" duration-ms="29590" started-at="2019-10-02T07:07:43Z" finished-at="2019-10-02T07:08:13Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="20170" started-at="2019-09-29T12:13:52Z" finished-at="2019-09-29T12:14:12Z">
+    <test name="Surefire test" duration-ms="29590" started-at="2019-10-02T07:07:43Z" finished-at="2019-10-02T07:08:13Z">
       <class name="com.crm.qa.testcases.DealsPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.crm.qa.testcases.DealsPageTest@12843fce]" name="setUp" is-config="true" duration-ms="15467" started-at="2019-09-29T12:13:52Z" finished-at="2019-09-29T12:14:08Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.crm.qa.testcases.DealsPageTest@13a57a3b]" name="setUp" is-config="true" duration-ms="23963" started-at="2019-10-02T07:07:43Z" finished-at="2019-10-02T07:08:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyClickOnDealsTest()[pri:-1, instance:com.crm.qa.testcases.DealsPageTest@12843fce]" name="verifyClickOnDealsTest" duration-ms="3579" started-at="2019-09-29T12:14:08Z" finished-at="2019-09-29T12:14:11Z">
+        <test-method status="PASS" signature="verifyClickOnDealsTest()[pri:-1, instance:com.crm.qa.testcases.DealsPageTest@13a57a3b]" name="verifyClickOnDealsTest" duration-ms="4658" started-at="2019-10-02T07:08:07Z" finished-at="2019-10-02T07:08:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyClickOnDealsTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.crm.qa.testcases.DealsPageTest@12843fce]" name="tearDown" is-config="true" duration-ms="1074" started-at="2019-09-29T12:14:11Z" finished-at="2019-09-29T12:14:12Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.crm.qa.testcases.DealsPageTest@13a57a3b]" name="tearDown" is-config="true" duration-ms="926" started-at="2019-10-02T07:08:12Z" finished-at="2019-10-02T07:08:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

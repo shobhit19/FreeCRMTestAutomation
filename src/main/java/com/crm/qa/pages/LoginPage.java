@@ -37,5 +37,9 @@ public class LoginPage extends TestBase {
 		return new HomePage();
 	}
 	
+	public SignUpPage clickOnSignUp() throws IOException {
+		sigup.click();
+		return new SignUpPage();
+	}
 	
 }

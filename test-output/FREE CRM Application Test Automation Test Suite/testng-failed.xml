@@ -8,9 +8,13 @@
     <classes>
       <class name="com.crm.qa.testcases.ContactsPageTest">
         <methods>
+          <include name="verifyClickOnSave"/>
           <include name="setup"/>
+          <include name="verifyClickOnContactsLabel"/>
+          <include name="verifyClickOnNewContact"/>
           <include name="tearDown"/>
-          <include name="validateCreateNewContact" invocation-numbers="0 1 2"/>
+          <include name="validateCreateNewContact"/>
+          <include name="verifyClickOnContactsCancel"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
     </classes>

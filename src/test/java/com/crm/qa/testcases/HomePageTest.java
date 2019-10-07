@@ -38,24 +38,45 @@ public class HomePageTest extends TestBase{
 		homePage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"));	
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1,enabled=false)
 	public void verifyHomePageTitleTest() {
 		String homePageTitle=homePage.validateHomePageTitle();
 		Assert.assertEquals(homePageTitle,"Cogmento CRM","Home Page Title noyt matched");	
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,enabled=false)
 	public void verifyUserNameTest() {
 		Assert.assertTrue(homePage.verifyCorrectUserName());
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3,enabled=false)
 	public void clickOnContactsLinkTest() throws IOException {
 		contactsPage=homePage.clickOnContacts();
+	}
+//	@Test
+//	public void verifyClickedOnDropDownSettings() {
+//		try {
+//			homePage.clickOnDropDown();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 		
+	@Test(priority=4)
+	public void  verifySrchBox() {
 		
+		homePage.Search();
 		
 	}
+	
+	@Test(dependsOnMethods="verifySrchBox")
+	public void verifyRecordCount() {
+		verifySrchBox();
+		String txt=homePage.getRecordCount();
+		Assert.assertEquals(txt, "No records found", "Records not found");
+	}
+	
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
