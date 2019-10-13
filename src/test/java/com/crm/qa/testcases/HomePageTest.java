@@ -62,20 +62,12 @@ public class HomePageTest extends TestBase{
 //			e.printStackTrace();
 //		}
 //	}
-		
-	@Test(priority=4)
-	public void  verifySrchBox() {
-		
-		homePage.Search();
-		
+	
+	@Test
+	public void clickOnDeleteIconAndCheckEachCatRecordsTest() {
+		homePage.clickOnDeleteIconAndCheckEachCatRecords();
 	}
 	
-	@Test(dependsOnMethods="verifySrchBox")
-	public void verifyRecordCount() {
-		verifySrchBox();
-		String txt=homePage.getRecordCount();
-		Assert.assertEquals(txt, "No records found", "Records not found");
-	}
 	
 	@AfterMethod
 	public void tearDown() {

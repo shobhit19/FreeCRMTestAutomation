@@ -11,37 +11,34 @@ import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.testbase.TestBase;
 
-public class DealsPageTest extends TestBase{
+public class DealsPageTest extends TestBase {
 
 	LoginPage loginPage;
 	HomePage homePage;
 	DealsPage dealsPage;
+
 	public DealsPageTest() throws IOException {
 		super();
 	}
 
-	@BeforeMethod
+	@BeforeMethod(groups= {"SmokeTests"})
 	public void setUp() throws IOException {
 		initilization();
 		loginPage = new LoginPage();
 		homePage = new HomePage();
 		dealsPage = new DealsPage();
-		loginPage.login(prop.getProperty("username"), prop.getProperty("password"));	
+		loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
-	
-	@Test(priority=-1)
-	public void verifyClickOnDealsTest() {
-		try {
-			dealsPage=homePage.clickOnDeals();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+	@Test(groups= {"SmokeTests"})
+	public void verifyClickOnDealsTest() throws IOException {
+		dealsPage = homePage.clickOnDeals();
+
 	}
-	
-	@AfterMethod
+
+	@AfterMethod(groups= {"SmokeTests"})
 	public void tearDown() {
 		driver.quit();
 	}
-	
+
 }

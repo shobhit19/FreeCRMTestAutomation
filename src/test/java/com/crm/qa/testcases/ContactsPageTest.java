@@ -25,7 +25,7 @@ public class ContactsPageTest extends TestBase {
 	}
 
 	
-	@BeforeMethod
+	@BeforeMethod(groups= {"SmokeTests"})
 	public void setup() throws IOException {
 		initilization();
 		loginPage = new LoginPage();
@@ -35,7 +35,7 @@ public class ContactsPageTest extends TestBase {
 		
 	}	
 	
-	@Test(priority=1)
+	@Test(groups= {"SmokeTests"})
 	public void verifyClickOnContactsLabel() throws IOException {
 		contactsPage=homePage.clickOnContacts();
 	}
@@ -73,7 +73,7 @@ public class ContactsPageTest extends TestBase {
 //		contactsPage.clickOnSave();
 //	}
 	
-	@AfterMethod
+	@AfterMethod(groups= {"SmokeTests"})
 	public void tearDown() {
 		driver.quit();
 	}

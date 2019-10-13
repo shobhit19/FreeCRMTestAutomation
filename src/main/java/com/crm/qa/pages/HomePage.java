@@ -4,89 +4,128 @@ import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.testbase.TestBase;
 
 public class HomePage extends TestBase {
 
-	
 	public HomePage() throws IOException {
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//span[contains(text(),'shobhit v')]")
+
+	@FindBy(xpath = "//span[contains(text(),'shobhit v')]")
 	WebElement userameLabel;
-	@FindBy(xpath="//a[@href='/contacts']")
+	@FindBy(xpath = "//a[@href='/contacts']")
 	WebElement lnkContacts;
-	@FindBy(xpath="//span[contains(text(),'Deals')]")
+	@FindBy(xpath = "//span[contains(text(),'Deals')]")
 	WebElement lnkDeals;
-	@FindBy(xpath="//span[contains(text(),'Tasks')]")
+	@FindBy(xpath = "//span[contains(text(),'Tasks')]")
 	WebElement lnkTasks;
-	@FindBy(id="//div[@class='right menu']/div[@class='ui buttons']/div[@role='listbox']")
+	@FindBy(id = "//div[@class='right menu']/div[@class='ui buttons']/div[@role='listbox']")
 	WebElement dropDown;
-	@FindBy(xpath="//input[@type='text']")
+	@FindBy(xpath = "//input[@type='text']")
 	WebElement txtSearch;
-	@FindBy(xpath="//td[contains(text(),'No records found')]")
+	@FindBy(xpath = "//td[contains(text(),'No records found')]")
 	WebElement txtRecords;
-	@FindBy(id="//button[@class='ui basic button item']")
+	@FindBy(id = "//button[@class='ui basic button item']")
 	WebElement deleteRecords;
-	@FindBy(xpath="//button[contains(text(),'Purge Selected')]")
+	@FindBy(xpath = "//button[contains(text(),'Purge Selected')]")
 	WebElement btnPurge;
-	@FindBy(xpath="//button[contains(text(),'Restore Selected')]")
+	@FindBy(xpath = "//button[contains(text(),'Restore Selected')]")
 	WebElement btnRestoreSelected;
+	@FindBy(xpath = "//a[@href='/calendar']")
+	WebElement lnkCalendar;
+	@FindBy(xpath = "//a[@href='/companies']")
+	WebElement lnkCompanies;
+	@FindBy(xpath = "//a[@href='/cases']")
+	WebElement lnkCases;
+	@FindBy(xpath = "//a[@href='/calls']")
+	WebElement lnkCalls;
+	@FindBy(xpath = "//a[@href='/documents']")
+	WebElement lnkDocuments;
+	@FindBy(xpath = "/email")
+	WebElement lnkEmails;
+	@FindBy(xpath="//a[@href='/compaigns']")
+	WebElement lnkCompaigns;
+	@FindBy(xpath="//a[@href='/forms']")
+	WebElement lnkForms;
+	
 	
 	public String validateHomePageTitle() {
 		return driver.getTitle();
 	}
-	
+
 	public ContactsPage clickOnContacts() throws IOException {
 		lnkContacts.click();
 		return new ContactsPage();
-		
+
 	}
-	
+
 	public DealsPage clickOnDeals() throws IOException {
 		lnkDeals.click();
 		return new DealsPage();
 	}
-	
+
 	public TasksPage clickOnTasks() throws IOException {
 		lnkTasks.click();
 		return new TasksPage();
+	}
+
+	public CalendarPage clickOnCalendar() throws IOException {
+		lnkCalendar.click();
+		return new CalendarPage();
+	}
+
+	public CompaniesPage clickOnCompanies() throws IOException {
+		lnkCompanies.click();
+		return new CompaniesPage();
+	}
+
+	public CasesPage clickOnCases() throws IOException {
+		lnkCases.click();
+		return new CasesPage();
+	}
+
+	public CallsPage clickOnCalls() throws IOException {
+		lnkCalls.click();
+		return new CallsPage();
+	}
+
+	public DocumentsPage clickOnDocuments() throws IOException {
+		lnkDocuments.click();
+		return new DocumentsPage();
+	}
+
+	public EmailPage clickOnEmail() throws IOException {
+		lnkEmails.click();
+		return new EmailPage();
+
+	}
+	
+	public CompaignsPage clickOnCompaigns() throws IOException {
+		lnkCompaigns.click();
+		return new CompaignsPage();
+	}
+
+	public FormsPage clickOnForms() throws IOException {
+		lnkForms.click();
+		return new FormsPage();
 	}
 	
 	public boolean verifyCorrectUserName() {
 		return userameLabel.isDisplayed();
 	}
-	
-	public void Search() {
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait= new WebDriverWait(driver,5);
-		txtSearch=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='text']")));
-		txtSearch.sendKeys("deifgf"+ "\n");
-	}
-	
-	public String getRecordCount() {
-		return txtRecords.getText();
-	}
-	
-	public void deleteRecords() {
+
+	public void clickOnDeleteIconAndCheckEachCatRecords() {
 		deleteRecords.click();
-		
+		List<WebElement> catIcons = driver.findElements(By.xpath("//div[@class='ui center aligned segment']"));
+		System.out.println(catIcons.size());
+
 	}
+
 //	public void clickOnDropDown() throws InterruptedException {
 //		
 //		Select sel= new Select(dropDown);
@@ -94,12 +133,10 @@ public class HomePage extends TestBase {
 //		sel.selectByVisibleText("Products");
 //		sel.selectByVisibleText("Import");
 //		sel.selectByVisibleText("Log Out");
-		
-		
+
 //		dropDownSettings.click();
 //		Actions action = new Actions(driver);
 //		action.moveToElement(dropDownSettings).build().perform();
 //		
 
-	}
-
+}

@@ -5,18 +5,33 @@
     <listener class-name="com.qa.crm.extentreportlistener.ExtentReportListener"/>
   </listeners>
   <test thread-count="5" name="Free CRM App Test Cases(failed)">
+    <groups>
+      <run>
+        <include name="SmokeTests"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.crm.qa.testcases.ContactsPageTest">
+      <class name="com.crm.qa.testcases.EmailsPageTest">
         <methods>
-          <include name="verifyClickOnSave"/>
-          <include name="setup"/>
-          <include name="verifyClickOnContactsLabel"/>
-          <include name="verifyClickOnNewContact"/>
+          <include name="clickOnEmailTest"/>
           <include name="tearDown"/>
-          <include name="validateCreateNewContact"/>
-          <include name="verifyClickOnContactsCancel"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
+      </class> <!-- com.crm.qa.testcases.EmailsPageTest -->
+      <class name="com.crm.qa.testcases.CompaignsPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="clickOnCompaignsTest"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.CompaignsPageTest -->
+      <class name="com.crm.qa.testcases.CallsPageTest">
+        <methods>
+          <include name="clickOnCallsTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.CallsPageTest -->
     </classes>
   </test> <!-- Free CRM App Test Cases(failed) -->
 </suite> <!-- Failed suite [FREE CRM Application Test Automation Test Suite] -->
